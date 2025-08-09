@@ -88,6 +88,7 @@ namespace SevenZipExtractor
             this.Extract(entry =>
             {
                 string fileName = Path.Combine(outputFolder, entry.FileName);
+                fileName = PathUtils.ReplaceInvalidChars(fileName);
 
                 if (entry.IsFolder)
                 {
