@@ -10,7 +10,7 @@ namespace SevenZipExtractor.Tests
         [TestMethod]
         public void TestGuessAndExtractToStream_Fails()
         {
-            Assert.ThrowsException<SevenZipException>(() =>
+            Assert.ThrowsExactly<SevenZipException>(() =>
             {
                 this.TestExtractToStream(Resources.TestFiles.lzh, this.TestEntriesWithoutFolder);
             });
